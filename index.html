@@ -1,40 +1,90 @@
-<html>
-  <head>
-    <title>My Image Gallery</title>
-  </head>
-  <body>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Image Gallery</title>
+  <style>
+    :root { --gap: 12px; --tile-h: 220px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 24px auto 80px;
+      padding: 0 16px;
+    }
+    h1 { margin: 0 0 16px; font-size: 32px; }
+    /* Even, gapless grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--gap);
+    }
+    /* Make every tile the same height; crop smartly */
+    .gallery img {
+      width: 100%;
+      height: var(--tile-h);
+      object-fit: cover;       /* crops without distortion */
+      display: block;
+      border-radius: 10px;
+    }
+    /* Hover niceness */
+    .gallery img:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      transition: 120ms ease;
+    }
+    /* Bigger tiles on larger screens */
+    @media (min-width: 900px) { :root { --tile-h: 260px; } }
+    @media (min-width: 1200px) { :root { --tile-h: 300px; } }
+    /* Optional small footer */
+    footer { opacity: 0.7; margin-top: 24px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
     <h1>My Image Gallery</h1>
-    
-    <img src="images/Media (63).jpg" width="300">
-    <img src="images/Media (64).jpg" width="300">
-    <img src="images/Media (65).jpg" width="300">
-    <img src="images/Media (66).jpg" width="300">
-    <img src="images/Media (67).jpg" width="300">
-    <img src="images/Media (68).jpg" width="300">
-    <img src="images/Media (69).jpg" width="300">
-    <img src="images/Media (70).jpg" width="300">
-    <img src="images/Media (71).jpg" width="300">
-    <img src="images/Media (72).jpg" width="300">
-    <img src="images/Media (73).jpg" width="300">
-    <img src="images/Media (74).jpg" width="300">
-    <img src="images/Media (75).jpg" width="300">
-    <img src="images/Media (76).jpg" width="300">
-    <img src="images/Media (77).jpg" width="300">
-    <img src="images/Media (78).jpg" width="300">
-    <img src="images/Media (79).jpg" width="300">
-    <img src="images/Media (80).jpg" width="300">
-    <img src="images/Media (81).jpg" width="300">
-    <img src="images/Media (82).jpg" width="300">
-    <img src="images/Media (83).jpg" width="300">
-    <img src="images/Media (84).jpg" width="300">
-    <img src="images/Media (85).jpg" width="300">
-    <img src="images/Media (86).jpg" width="300">
-    <img src="images/Media (87).jpg" width="300">
-    <img src="images/Media (88).jpg" width="300">
-    <img src="images/Media (89).jpg" width="300">
-    <img src="images/Media (90).jpg" width="300">
-    <img src="images/Media (91).jpg" width="300">
-    <img src="images/Media (92).jpg" width="300">
-   
-  </body>
+
+    <div class="gallery">
+          <img src="images/Media (63).jpg" width="300">
+          <img src="images/Media (64).jpg" width="300">
+          <img src="images/Media (65).jpg" width="300">
+          <img src="images/Media (66).jpg" width="300">
+          <img src="images/Media (67).jpg" width="300">
+          <img src="images/Media (68).jpg" width="300">
+          <img src="images/Media (69).jpg" width="300">
+          <img src="images/Media (70).jpg" width="300">
+          <img src="images/Media (71).jpg" width="300">
+          <img src="images/Media (72).jpg" width="300">
+          <img src="images/Media (73).jpg" width="300">
+          <img src="images/Media (74).jpg" width="300">
+          <img src="images/Media (75).jpg" width="300">
+          <img src="images/Media (76).jpg" width="300">
+          <img src="images/Media (77).jpg" width="300">
+          <img src="images/Media (78).jpg" width="300">
+          <img src="images/Media (79).jpg" width="300">
+          <img src="images/Media (80).jpg" width="300">
+          <img src="images/Media (81).jpg" width="300">
+          <img src="images/Media (82).jpg" width="300">
+          <img src="images/Media (83).jpg" width="300">
+          <img src="images/Media (84).jpg" width="300">
+          <img src="images/Media (85).jpg" width="300">
+          <img src="images/Media (86).jpg" width="300">
+          <img src="images/Media (87).jpg" width="300">
+          <img src="images/Media (88).jpg" width="300">
+          <img src="images/Media (89).jpg" width="300">
+          <img src="images/Media (90).jpg" width="300">
+          <img src="images/Media (91).jpg" width="300">
+          <img src="images/Media (92).jpg" width="300">
+    </div>
+
+    <footer>© hosted by LarrythePants</footer>
+  </div>
+</body>
 </html>
